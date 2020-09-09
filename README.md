@@ -1,4 +1,4 @@
-# Ray-Rengine-Rust
+# Ray-Rengine Rust
 Ray-Rengine is a regex engine that supports an advance form of regular expressions with explicit recursion
 
 # Why Ray-Rengine and not Perl's extended RegEx
