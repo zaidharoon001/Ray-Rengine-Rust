@@ -25,5 +25,5 @@ fn main() {
             "
         );
         let input = String::from("1+28/1-(12*(2-13)+81)");
-        println!("{}", rayRengine::match_string(regex, input));
+        println!("{}", rayRengine::string_left(regex, input));
 }

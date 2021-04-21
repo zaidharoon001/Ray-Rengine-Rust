@@ -3,7 +3,7 @@ use crate::lexer;
 use crate::parser;
 use crate::interpreter;
 
-pub fn match_string(regex:String, input: String) -> bool {
+pub fn string_left(regex:String, input: String) -> String {
     let position = position::Position{filename: String::from("Yoi"), ftext: regex, index: 0u64, ln: 1u64, cn: 1u64};
     let mut lexer = lexer::Lexer{current_index: 0usize, chars: position.ftext.as_bytes().to_vec(), position: position};
     let mut toks = match lexer.lex() {
@@ -23,5 +23,9 @@ pub fn match_string(regex:String, input: String) -> bool {
             Ok(a) => a,
             Err(err) => panic!("{}", err)
         };
-    return left == "".to_string()
+    return left
+}
+
+pub fn match_string(regex:String, input: String) -> bool {
+    return string_left(regex, input) == ""
 }
